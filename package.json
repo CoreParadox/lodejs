@@ -1,0 +1,25 @@
+{
+  "name": "lodestonescraper",
+  "version": "0.1.0",
+  "description": "ScrapesLodestone",
+  "main": "index.js",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "@types/node":"*"
+  },
+  "directories": {
+    "lib":"compiled"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CoreParadox",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/CoreParadox/lodestonescraper.git"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}
