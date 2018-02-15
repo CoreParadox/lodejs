@@ -2,7 +2,7 @@
   "name": "lodestonescraper",
   "version": "0.2.0",
   "description": "ScrapesLodestone",
-  "main": "index.js",
+  "main": "compiled/index.js",
   "dependencies": {
 
   },
@@ -12,6 +12,9 @@
   "directories": {
     "lib":"compiled"
   },
+  "files":[
+    "/compiled/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
