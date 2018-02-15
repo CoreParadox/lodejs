@@ -58,7 +58,17 @@ export class Character implements LodestoneObject {
         var regex = new RegExp(RegexStatements.Character.Classes, "g");
         var match = regex.exec(data)
         while (match != null) {
-            console.log(match[1]);
+            switch(match[1]){
+                case "Pugilist":
+                    match[1] = "Monk / Pugilist";
+                    break;
+                case "Scholar":
+                    match[1] = "Scholar / Arcanist";
+                    break;
+                case "Lancer":
+                    match[1] = "Dragoon / Lancer";
+                    break;
+            }
             this.Classes.push({ Class: match[1], Level: parseInt(match[2]) });
             match = regex.exec(data);
         }
