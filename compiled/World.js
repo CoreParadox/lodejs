@@ -11,13 +11,15 @@ class WorldStatus {
     }
     getStatus(name) {
         var wName = Worlds_1.Worlds.AllWorlds.find(a => a.toLowerCase() == name.toLowerCase());
+        wName = this.properCase(wName);
         if (!wName)
             throw new Error("invalid world provided.");
         else
-            return this.worlds[name];
+            return this.worlds[wName];
     }
     populate(data) {
         this.worlds = this.getWorlds(data);
+        console.log(this.worlds);
         return this;
     }
     getWorlds(data) {
@@ -25,10 +27,13 @@ class WorldStatus {
         var regex = new RegExp(RegexStatements_1.RegexStatements.WorldQuery.Status, "g");
         var match = regex.exec(data);
         while (match != null) {
-            worlds[match[1]] = match[2];
+            worlds[this.properCase(match[1])] = match[2];
             match = regex.exec(data);
         }
         return worlds;
+    }
+    properCase(str) {
+        return str.substr(0, 1).toUpperCase() + str.substr(1, str.length).toLowerCase();
     }
 }
 exports.WorldStatus = WorldStatus;

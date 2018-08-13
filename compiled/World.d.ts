@@ -6,4 +6,5 @@ export declare class WorldStatus implements LodestoneObject {
     getStatus(name: Worlds.AllWorlds): string;
     populate(data: string): this;
     private getWorlds;
+    private properCase;
 }
