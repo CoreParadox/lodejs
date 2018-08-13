@@ -23,4 +23,7 @@ export module RegexStatements{
     export const CharacterQuery = {
         Entry:/<a href="\/lodestone\/character\/(\d+)\/" class="entry__link">/
     }
+    export const WorldQuery = {
+        Status:/<h3 class="">(\w+)<\/h3>\s+<p>\s+(\w+)\s+<\/p>/
+    }
 }

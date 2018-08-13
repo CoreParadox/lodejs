@@ -22,4 +22,7 @@ export declare module RegexStatements {
     const CharacterQuery: {
         Entry: RegExp;
     };
+    const WorldQuery: {
+        Status: RegExp;
+    };
 }

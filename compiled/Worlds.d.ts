@@ -9,7 +9,7 @@ export declare module Worlds {
         Ramuh = "Ramuh",
         Tonberry = "Tonberry",
         Typhon = "Typhon",
-        Unicorn = "Unicorn",
+        Unicorn = "Unicorn"
     }
     enum Gaia {
         Alexander = "Alexander",
@@ -22,7 +22,7 @@ export declare module Worlds {
         Ultima = "Ultima",
         Valefor = "Valefor",
         Yojimbo = "Yojimbo",
-        Zeromus = "Zeromus",
+        Zeromus = "Zeromus"
     }
     enum Mana {
         Anima = "Anima",
@@ -35,7 +35,7 @@ export declare module Worlds {
         Masamune = "Masamune",
         Pandaemonium = "Pandaemonium",
         Shinryu = "Shinryu",
-        Titan = "Titan",
+        Titan = "Titan"
     }
     enum Aether {
         Adamantoise = "Adamantoise",
@@ -50,7 +50,7 @@ export declare module Worlds {
         Midgardsormr = "Midgardsormr",
         Sargatanas = "Sargatanas",
         Siren = "Siren",
-        Zalera = "Zalera",
+        Zalera = "Zalera"
     }
     enum Primal {
         Behemoth = "Behemoth",
@@ -63,7 +63,7 @@ export declare module Worlds {
         Lamia = "Lamia",
         Leviathan = "Leviathan",
         Malboro = "Malboro",
-        Ultros = "Ultros",
+        Ultros = "Ultros"
     }
     enum Chaos {
         Cerberus = "Cerberus",
@@ -75,7 +75,8 @@ export declare module Worlds {
         Phoenix = "Phoenix",
         Ragnarok = "Ragnarok",
         Shiva = "Shiva",
-        Zodiark = "Zodiark",
+        Zodiark = "Zodiark"
     }
-    const AllWorlds: string[];
+    type AllWorlds = Chaos | Primal | Aether | Mana | Gaia | Elemental;
+    const AllWorlds: any[];
 }

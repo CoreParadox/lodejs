@@ -2,7 +2,7 @@
   "name": "lodestonescraper",
   "version": "0.2.0",
   "description": "ScrapesLodestone",
-  "main": "compiled/index.js",
+  "main": "compiled/Index.js",
   "dependencies": {
 
   },
@@ -16,6 +16,7 @@
     "/compiled/*"
   ],
   "scripts": {
+    "build":"tsc -outDir compiled",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "CoreParadox",

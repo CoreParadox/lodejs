@@ -25,4 +25,7 @@ var RegexStatements;
     RegexStatements.CharacterQuery = {
         Entry: /<a href="\/lodestone\/character\/(\d+)\/" class="entry__link">/
     };
+    RegexStatements.WorldQuery = {
+        Status: /<h3 class="">(\w+)<\/h3>\s+<p>\s+(\w+)\s+<\/p>/
+    };
 })(RegexStatements = exports.RegexStatements || (exports.RegexStatements = {}));

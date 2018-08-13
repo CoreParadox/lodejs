@@ -82,5 +82,6 @@ export module Worlds{
         Zodiark = "Zodiark"
     }
 
+    export type AllWorlds = Chaos | Primal | Aether | Mana | Gaia | Elemental
     export const AllWorlds = Object.values(Chaos).concat(Object.values(Primal),Object.values(Aether),Object.values(Mana),Object.values(Gaia),Object.values(Elemental));
 }
