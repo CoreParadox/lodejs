@@ -1,7 +1,7 @@
 {
   "name": "lodestonescraper",
   "version": "0.2.0",
-  "description": "ScrapesLodestone",
+  "description": "Scrapes Lodestone",
   "main": "compiled/Index.js",
   "dependencies": {
 
