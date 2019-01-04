@@ -7,7 +7,7 @@ export module RegexStatements{
         LastName: /<p class="frame__chara__name">\w+(\s\w+)<\/p>/,
         Race: /<p class="character-block__title">Race\/Clan\/Gender<\/p>\s*<p class="character-block__name">([^<]+)<br \/>/,
         Clan: /<p class="character-block__title">Race\/Clan\/Gender<\/p>\s*<p class="character-block__name">[^<]+<br \/>(\w+)/,
-        Gender: /<p class="character-block__title">Race\/Clan\/Gender<\/p>\s*<p class="character-block__name">[^<]+<br \/>\w+\s\/\s([♂♀])/,
+        Gender: /<p class="character-block__title">Race\/Clan\/Gender<\/p>\s*<p class="character-block__name">[^<]+<br \/>[\w\s]+\s\/\s([♂♀])/,
         FreeCompany: /<h4><a href="[\w\/]+">([\w\s]+)<\/a>/,
         GrandCompany: /<p class="character-block__title">Grand Company<\/p>\s*<p class="character-block__name">([\w\s]+)[^<]+<\/p>/,
         GrandCompanyStanding: /<p class="character-block__title">Grand Company<\/p>\s*<p class="character-block__name">[\w\s]+\/([^<]+)+<\/p>/,
