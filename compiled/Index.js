@@ -16,5 +16,3 @@ var Api;
     }
     Api.getWorldStatus = getWorldStatus;
 })(Api = exports.Api || (exports.Api = {}));
-var Character_1 = require("./Objects/Character");
-exports.Character = Character_1.Character;

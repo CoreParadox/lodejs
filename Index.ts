@@ -14,5 +14,3 @@ export module Api{
     } 
     
 }
-
-export {Character as Character} from "./Objects/Character";
