@@ -1,5 +1,5 @@
-import { Worlds } from "./Worlds";
 import { LodestoneObject } from "./LodestoneObject";
+import { Worlds } from "../Utilities";
 export declare class WorldStatus implements LodestoneObject {
     private worlds;
     readonly url: string;

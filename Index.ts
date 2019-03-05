@@ -1,8 +1,5 @@
 import ApiClient from "./ApiClient";
-import CharacterQuery from "./Query";
-import {Character} from "./Character";
-import {LodestoneObject} from "./LodestoneObject";
-import { WorldStatus } from "./World";
+import {Character, CharacterQuery, WorldStatus} from "./Objects/";
 const client = new ApiClient()
 
 export module Api{
@@ -18,4 +15,4 @@ export module Api{
     
 }
 
-export {Character as Character} from "./Character";
+export {Character as Character} from "./Objects/Character";

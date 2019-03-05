@@ -1,5 +1,5 @@
 import {Api} from "../Index";
-import { Worlds } from "../Worlds";
+import { Worlds } from "../Utilities/Worlds";
 
 function TestCharacter(){
     Api.getCharacter("Donut","Steel","Goblin").then(console.log);

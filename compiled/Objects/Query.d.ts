@@ -1,5 +1,5 @@
 import { LodestoneObject } from "./LodestoneObject";
-export default class CharacterQuery implements LodestoneObject {
+export declare class CharacterQuery implements LodestoneObject {
     CharacterList: string[];
     FirstName: any;
     LastName: any;

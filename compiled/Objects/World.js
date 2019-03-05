@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Worlds_1 = require("./Worlds");
-const RegexStatements_1 = require("./RegexStatements");
+const Utilities_1 = require("../Utilities");
 class WorldStatus {
     constructor() {
         this.properCase = (str) => str.substr(0, 1).toUpperCase() + str.substr(1, str.length).toLowerCase();
@@ -10,7 +9,7 @@ class WorldStatus {
         return `https://na.finalfantasyxiv.com/lodestone/worldstatus/`;
     }
     getStatus(name) {
-        var wName = this.properCase(Worlds_1.Worlds.AllWorlds.find(a => a.toLowerCase() == name.toLowerCase()));
+        var wName = this.properCase(Utilities_1.Worlds.AllWorlds.find(a => a.toLowerCase() == name.toLowerCase()));
         if (!wName)
             throw new Error("invalid world provided.");
         return this.worlds[wName];
@@ -21,7 +20,7 @@ class WorldStatus {
     }
     getWorlds(data) {
         var worlds = {};
-        var regex = new RegExp(RegexStatements_1.RegexStatements.WorldQuery.Status, "g");
+        var regex = new RegExp(Utilities_1.RegexStatements.WorldQuery.Status, "g");
         var match = regex.exec(data);
         while (match != null) {
             worlds[this.properCase(match[1])] = match[2];

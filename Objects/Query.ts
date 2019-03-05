@@ -1,8 +1,7 @@
-import {Worlds} from "./Worlds";
 import {LodestoneObject} from "./LodestoneObject";
-import { RegexStatements } from "./RegexStatements";
+import { Worlds, RegexStatements } from "../Utilities";
 
-export default class CharacterQuery implements LodestoneObject{
+export class CharacterQuery implements LodestoneObject{
 
     public CharacterList: string[] = []
     public FirstName;

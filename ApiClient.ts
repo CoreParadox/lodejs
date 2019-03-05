@@ -1,4 +1,4 @@
-import { LodestoneObject } from "./LodestoneObject";
+import { LodestoneObject } from "./Objects";
 import * as https from "https";
 
 export default class ApiClient{

@@ -1,6 +1,5 @@
-import { Worlds } from "./Worlds";
 import { LodestoneObject } from "./LodestoneObject";
-import { RegexStatements } from "./RegexStatements";
+import { RegexStatements, Worlds } from "../Utilities";
 
 export class WorldStatus implements LodestoneObject {
     private worlds:object;

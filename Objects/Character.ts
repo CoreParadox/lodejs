@@ -1,40 +1,63 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const RegexStatements_1 = require("./RegexStatements");
-class Character {
-    constructor(id) {
-        this.Classes = [];
+import { LodestoneObject } from "./LodestoneObject";
+import { RegexStatements } from "../Utilities";
+
+export class Character implements LodestoneObject {
+    private id: String;
+    public WorldName: string;
+    public Title: string;
+    public FirstName: string;
+    public LastName: string;
+    public Race: string;
+    public Clan: string;
+    public Gender: string;
+    public FreeCompany: string;
+    public GrandCompany: string;
+    public GrandCompanyStanding: string;
+    public Hometown: string;
+    public Nameday: string;
+    public Guardian: string;
+    public Classes: { Class: string, Level: number }[] = [];
+    public SelfIntroduction: string;
+    public CurrentClass: string;
+    public Headshot: string;
+    public Portrait: string;
+
+    constructor(id: String) {
         this.id = id;
     }
+
+    
     get url() {
-        return `https://na.finalfantasyxiv.com/lodestone/character/${this.id}`;
+        return `https://na.finalfantasyxiv.com/lodestone/character/${this.id}`
     }
-    populate(data) {
-        Object.getOwnPropertyNames(RegexStatements_1.RegexStatements.Character).forEach(key => {
+
+    populate(data: string) {
+        Object.getOwnPropertyNames(RegexStatements.Character).forEach(key => {
             switch (key) {
                 case "Classes":
                     this.getClasses(data);
                     break;
                 case "Gender":
-                    this.Gender = data.match(RegexStatements_1.RegexStatements.Character.Gender)[1] === "♂" ? "Male" : "Female";
+                    this.Gender = data.match(RegexStatements.Character.Gender)[1] === "♂" ? "Male" : "Female";
                     break;
                 case "CurrentClass":
-                    this.CurrentClass = this.MapClass(data.match(RegexStatements_1.RegexStatements.Character.CurrentClass)[1]);
+                    this.CurrentClass = this.MapClass(data.match(RegexStatements.Character.CurrentClass)[1])
                     break;
                 default:
-                    var text = data.match(RegexStatements_1.RegexStatements.Character[key]);
-                    var res = text ? text[1] : "";
+                    var text = data.match(RegexStatements.Character[key]);
+                    var res = text ? text[1] : ""
                     this[key] = res.trim();
                     break;
             }
         });
         return this;
     }
-    getClasses(data) {
-        var regex = new RegExp(RegexStatements_1.RegexStatements.Character.Classes, "g");
-        var match = regex.exec(data);
+
+    private getClasses(data) {
+        var regex = new RegExp(RegexStatements.Character.Classes, "g");
+        var match = regex.exec(data)
         while (match != null) {
-            switch (match[1]) {
+            switch(match[1]){
                 case "Pugilist":
                     match[1] = "Monk / Pugilist";
                     break;
@@ -49,8 +72,11 @@ class Character {
             match = regex.exec(data);
         }
     }
-    MapClass(CurrentClassUrl) {
+
+    MapClass(CurrentClassUrl: string) {
+
         CurrentClassUrl = CurrentClassUrl.replace('https://img.finalfantasyxiv.com/lds/h', '');
+
         var jobs_png = {
             '/U/F5JzG9RPIKFSogtaKNBk455aYA.png': "Gladiator",
             '/N/St9rjDJB3xNKGYg-vwooZ4j6CM.png': "Marauder",
@@ -86,8 +112,9 @@ class Character {
             '/I/jGRnjIlwWridqM-mIPNew6bhHM.png': "Botanist",
             '/x/B4Azydbn7Prubxt7OL9p1LZXZ0.png': "Fisher",
             '/p/jdV3RRKtWzgo226CC09vjen5sk.png': "Blue Mage"
-        };
+        }
         return jobs_png[CurrentClassUrl];
     }
 }
-exports.Character = Character;
+
+
