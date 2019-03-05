@@ -1,5 +1,5 @@
 export module RegexStatements{
-
+    
     export const Character = {
         WorldName:/<p class="frame__chara__world">(\w+)<\/p>/,
         Title: /<p class="frame__chara__title">(\w+)<\/p>/,
@@ -20,10 +20,12 @@ export module RegexStatements{
         Portrait: /<div class="character__detail__image">\s*<a href="([^"]+)" target="_blank">/,
         Headshot: /<div class="frame__chara__face">\s*<img src="([^"]+)" width="40" height="40" alt="">/
     }
+
     export const CharacterQuery = {
         Entry:/<a href="\/lodestone\/character\/(\d+)\/" class="entry__link">/
     }
+
     export const WorldQuery = {
-        Status:/<h3 class="">(\w+)<\/h3>\s+<p>\s+(\w+)\s+<\/p>/
+        Status:/<h3>(\w+)<\/h3>\s+<p>\s+(\w+)\s+<\/p>/
     }
 }

@@ -1,6 +1,5 @@
 import { LodestoneObject } from "./LodestoneObject";
 export default class CharacterQuery implements LodestoneObject {
-    private id;
     CharacterList: string[];
     FirstName: any;
     LastName: any;

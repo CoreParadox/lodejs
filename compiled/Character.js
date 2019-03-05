@@ -84,7 +84,8 @@ class Character {
             '/m/1kMI2v_KEVgo30RFvdFCyySkFo.png': "Culinarian",
             '/A/aM2Dd6Vo4HW_UGasK7tLuZ6fu4.png': "Miner",
             '/I/jGRnjIlwWridqM-mIPNew6bhHM.png': "Botanist",
-            '/x/B4Azydbn7Prubxt7OL9p1LZXZ0.png': "Fisher"
+            '/x/B4Azydbn7Prubxt7OL9p1LZXZ0.png': "Fisher",
+            '/p/jdV3RRKtWzgo226CC09vjen5sk.png': "Blue Mage"
         };
         return jobs_png[CurrentClassUrl];
     }

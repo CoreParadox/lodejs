@@ -25,6 +25,6 @@ export declare class Character implements LodestoneObject {
     constructor(id: String);
     readonly url: string;
     populate(data: string): this;
-    getClasses(data: any): void;
+    private getClasses;
     MapClass(CurrentClassUrl: string): any;
 }

@@ -1,19 +1,19 @@
-import Fetcher from "./Fetcher";
+import ApiClient from "./ApiClient";
 import CharacterQuery from "./Query";
 import {Character} from "./Character";
 import {LodestoneObject} from "./LodestoneObject";
 import { WorldStatus } from "./World";
-const fetch = new Fetcher()
+const client = new ApiClient()
 
 export module Api{
     
     export async function getCharacter(fName,lName,world){
-        var result:CharacterQuery = <CharacterQuery>await fetch.Fetch(new CharacterQuery(fName,lName,world));
-        return await fetch.Fetch(new Character(result.CharacterList[0])) 
+        var result:CharacterQuery = await client.Request(new CharacterQuery(fName,lName,world)) as CharacterQuery;
+        return await client.Request(new Character(result.CharacterList[0])) 
     }
     export async function getWorldStatus(world){
-        var worlds = await fetch.Fetch(new WorldStatus());
-        return (<WorldStatus>worlds).getStatus(world);
+        var worlds = await client.Request(new WorldStatus()) as WorldStatus;
+        return worlds.getStatus(world);
     } 
     
 }

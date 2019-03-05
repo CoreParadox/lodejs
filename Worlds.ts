@@ -69,6 +69,7 @@ export module Worlds{
         Malboro = "Malboro",	
         Ultros = "Ultros"	
     }
+    
     export enum Chaos {
         Cerberus = "Cerberus",	
         Lich = "Lich",	

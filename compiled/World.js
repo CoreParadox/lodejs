@@ -4,22 +4,19 @@ const Worlds_1 = require("./Worlds");
 const RegexStatements_1 = require("./RegexStatements");
 class WorldStatus {
     constructor() {
-        this.worlds = {};
+        this.properCase = (str) => str.substr(0, 1).toUpperCase() + str.substr(1, str.length).toLowerCase();
     }
     get url() {
         return `https://na.finalfantasyxiv.com/lodestone/worldstatus/`;
     }
     getStatus(name) {
-        var wName = Worlds_1.Worlds.AllWorlds.find(a => a.toLowerCase() == name.toLowerCase());
-        wName = this.properCase(wName);
+        var wName = this.properCase(Worlds_1.Worlds.AllWorlds.find(a => a.toLowerCase() == name.toLowerCase()));
         if (!wName)
             throw new Error("invalid world provided.");
-        else
-            return this.worlds[wName];
+        return this.worlds[wName];
     }
     populate(data) {
         this.worlds = this.getWorlds(data);
-        console.log(this.worlds);
         return this;
     }
     getWorlds(data) {
@@ -31,9 +28,6 @@ class WorldStatus {
             match = regex.exec(data);
         }
         return worlds;
-    }
-    properCase(str) {
-        return str.substr(0, 1).toUpperCase() + str.substr(1, str.length).toLowerCase();
     }
 }
 exports.WorldStatus = WorldStatus;

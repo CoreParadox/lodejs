@@ -3,8 +3,7 @@ import {LodestoneObject} from "./LodestoneObject";
 import { RegexStatements } from "./RegexStatements";
 
 export default class CharacterQuery implements LodestoneObject{
-    
-    private id;
+
     public CharacterList: string[] = []
     public FirstName;
     public LastName;
@@ -16,6 +15,7 @@ export default class CharacterQuery implements LodestoneObject{
         this.World = Worlds.AllWorlds.find(a => a.toLowerCase() == worldName.toLowerCase());
         if(!this.World) throw new Error("invalid world provided.");
     }
+    
     populate(data: string){
         var regex = new RegExp(RegexStatements.CharacterQuery.Entry,"g");
         var match = regex.exec(data)

@@ -3,27 +3,25 @@ import { LodestoneObject } from "./LodestoneObject";
 import { RegexStatements } from "./RegexStatements";
 
 export class WorldStatus implements LodestoneObject {
-    public worlds = {};
+    private worlds:object;
     
     get url() {
         return `https://na.finalfantasyxiv.com/lodestone/worldstatus/`
     }
 
     public getStatus(name:Worlds.AllWorlds): string{
-            var wName = Worlds.AllWorlds.find(a => a.toLowerCase() == name.toLowerCase());
-            wName = this.properCase(wName)
-            if(!wName) throw new Error("invalid world provided.");
-            else return this.worlds[wName];
+        var wName = this.properCase(Worlds.AllWorlds.find(a => a.toLowerCase() == name.toLowerCase()));
+        if(!wName) throw new Error("invalid world provided.");
+        return this.worlds[wName];
     }
 
 
     public populate(data: string) {
         this.worlds = this.getWorlds(data);
-        console.log(this.worlds)
         return this;
     }
 
-    private getWorlds(data){
+    private getWorlds(data:string){
         var worlds = {}; 
         var regex = new RegExp(RegexStatements.WorldQuery.Status, "g");
         var match = regex.exec(data)
@@ -34,10 +32,7 @@ export class WorldStatus implements LodestoneObject {
         return worlds
     }
 
-    private properCase(str){
-        return str.substr(0,1).toUpperCase()+str.substr(1,str.length).toLowerCase()
-    }
-    
+    private properCase = (str:string) => str.substr(0,1).toUpperCase()+str.substr(1,str.length).toLowerCase()
 }
 
 
